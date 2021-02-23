@@ -3,6 +3,9 @@ import datetime as dt
 
 
 class Calculator:
+   import datetime as dt
+
+class Calculator:
     def __init__(self, limit):
         self.limit = limit
         self.records =[]
@@ -22,6 +25,7 @@ class Calculator:
             return count
 date_now = dt.datetime.now().date()
 
+
 class Record:
     def __init__(self, amount, comment, date=None):
         self.amount = amount
@@ -40,7 +44,6 @@ class CaloriesCalculator(Calculator):
             return f'Сегодня можно съесть что-нибудь ещё, но с общей калорийностью не более {self.today_remained} кКал'
 
 
-
 class CashCalculator(Calculator):
     def get_today_cash_remained(self, currency):
         if currency == 'rub':
@@ -50,6 +53,7 @@ class CashCalculator(Calculator):
                 return f'На сегодня осталось {self.today_remained()} руб'
             else:
                 return f'Денег нет, держись: твой долг - {today_remained} руб'
+        
         
 cash_calculator = CashCalculator(1000)
 cash_calculator.add_record(Record(amount=145, comment='кофе'))
